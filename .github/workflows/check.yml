@@ -1,0 +1,52 @@
+name: Check
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+env:
+  NODE_VERSION: 20
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  eslint-reviewdog:
+    name: ESLint with reviewdog
+    runs-on: ubuntu-latest
+    steps:
+      - name: ESLint
+        continue-on-error: true
+        run: echo 1
+
+
+  eslint-artifact:
+    name: ESLint with html artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: ESLint
+        continue-on-error: true
+        run: echo 1
+
+  typecheck-reviewdog:
+    name: nuxt typecheck with reviewdog
+    runs-on: ubuntu-latest
+    steps:
+      - name: ESLint
+        continue-on-error: true
+        run: echo 1
+
+  ajv:
+    name: ajv
+    runs-on: ubuntu-latest
+    steps:
+      - name: ESLint
+        continue-on-error: true
+        run: echo 1
